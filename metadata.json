@@ -1,0 +1,6 @@
+{
+  "name": "Kasir Gudang Simple",
+  "description": "Aplikasi web PWA kasir lokal dan pengelolaan stok barang untuk toko dan gudang kecil",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

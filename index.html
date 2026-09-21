@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Kasir Gudang Simple</title>
+    <meta name="description" content="Aplikasi web PWA kasir lokal dan pengelolaan stok barang untuk toko dan gudang kecil." />
+    <meta property="og:title" content="Kasir Gudang Simple" />
+    <meta property="og:description" content="Aplikasi web PWA kasir lokal dan pengelolaan stok barang untuk toko dan gudang kecil." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- PWA Settings -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#C2410C" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Kasir Gudang" />
+    <link rel="apple-touch-icon" href="/icon-192.svg" />
+    <link rel="icon" type="image/svg+xml" href="/icon-192.svg" />
+
+    <!-- Inter Font via Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Chart.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      // Register Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('ServiceWorker registered with scope:', registration.scope);
+            })
+            .catch(function(error) {
+              console.warn('ServiceWorker registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </head>
+  <body class="bg-[hsl(var(--background))] text-[hsl(var(--foreground))] antialiased min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
